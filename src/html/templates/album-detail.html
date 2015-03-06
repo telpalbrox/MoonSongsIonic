@@ -1,0 +1,18 @@
+<ion-view title="{{album.artist}}">
+  <ion-content>
+    <ion-list>
+      <a class="item item-icon-left" on-tap="randomize()">
+        <i class="icon ion-shuffle"></i>
+        Reproducir canciones
+      </a>
+      <ion-item class="item item-avatar" ng-repeat="song in album.songs"
+      type="item-text-wrap" href="#/tab/song/" on-tap="songClick(song)">
+        <div class="item item-image">
+          <img ng-src="{{getAlbumURL(song)}}" />
+        </div>
+        <h2>{{song.title}}</h2>
+        <p>{{song.album}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
