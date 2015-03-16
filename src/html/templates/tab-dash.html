@@ -10,8 +10,11 @@
     <button class="button button-full button-positive" on-tap="scan()">
       Escanear canciones locales
     </button>
-    <button class="button button-full button-positive" on-tap="inicioSesionModal()">
+    <button class="button button-full button-positive" on-tap="inicioSesionModal()" ng-show="!status.logged">
       Iniciar sesion
+    </button>
+    <button class="button button-full button-assertive" on-tap="logout()" ng-show="status.logged">
+      Cerrar sesion ({{getUser().userName}})
     </button>
     <div class="list">
 

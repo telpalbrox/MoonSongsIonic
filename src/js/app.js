@@ -22,7 +22,7 @@ angular.module('MoonSongsIonic', ['ionic',
   'moonSongsIonic.songsController'
 ])
 
-.run(function($ionicPlatform, $rootScope, ServerIp, Music, $http) {
+.run(function($ionicPlatform, $rootScope, ServerIp, Music, $http, Token) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove self to show the accessory bar above the keyboard
     // for form inputs)
@@ -50,7 +50,19 @@ angular.module('MoonSongsIonic', ['ionic',
       'pass': ''
     };
 
-    $rootScope.status = {};
+    if (!$rootScope.getUser) {
+      $rootScope.getUser = Token.getUser;
+    }
+    if (Token.get()) {
+      $rootScope.status = {
+        'logged': true
+      };
+      $rootScope.currentUser = Token.getUser();
+    } else {
+      $rootScope.status = {
+        'logged': false
+      };
+    }
 
     function onError(e) {
       console.log("ERROR");

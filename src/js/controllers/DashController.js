@@ -1,5 +1,5 @@
 angular.module('moonSongsIonic.dashController', [])
-  .controller('DashController', function($scope, $http, $ionicPopup, ServerIp, $timeout, LocalSongs, Music, $ionicModal, StorageService, Token) {
+  .controller('DashController', function($scope, $http, $ionicPopup, ServerIp, $timeout, LocalSongs, Music, $ionicModal, StorageService, Token, $rootScope) {
 
     // Triggered on a button click, or some other target
     $scope.showPopup = function() {
@@ -166,7 +166,7 @@ angular.module('moonSongsIonic.dashController', [])
         .success(function(data) {
           console.log(data.token);
           Token.save(data.token);
-          $scope.modal.hide();
+          $scope.closeModal();
         })
         .error(function(err) {
           console.log('error:');
@@ -176,6 +176,14 @@ angular.module('moonSongsIonic.dashController', [])
 
     $scope.modeChanged = function() {
       Music.setOffline($scope.data.offline);
+    };
+
+    $scope.logout = function() {
+      Token.remove();
+      $rootScope.status = {
+        'logged': false
+      };
+      Music.reset();
     };
 
   });
