@@ -98,7 +98,7 @@ module.exports = function(grunt) {
     watch: {
       options: {
         spawn: false,
-        livereload: 1336
+        livereload: 1335
       },
       // Watch any js/css change and re-concat it
       js: {
@@ -166,6 +166,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build-dev', ['jshint', 'concat', 'sync']);
   // Build project and start ionic serve
   grunt.registerTask('dev', ['jshint', 'concat', 'cssmin', 'sync', 'concurrent:dev']);
-  // Build project and clena dev files
+  // Build project and clean dev files
   grunt.registerTask('release', ['install', 'clean:release']);
 };
