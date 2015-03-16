@@ -1,0 +1,17 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Mis listas de reproduccion</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="list in lists" on-tap="listSelected($index)">
+        {{list.title}} | {{list.list.length}} canciones
+        <ion-option-button class="button-assertive"
+                     on-tap="listDelete(list)">
+            Eliminar
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>

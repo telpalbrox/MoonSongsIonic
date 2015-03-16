@@ -15,9 +15,10 @@ module.exports = function(grunt) {
       // Concat all js files
       js: {
         src: ['src/lib/ionic/js/ionic.bundle.js',
-        'src/lib/ng-cordova/dist/ng-cordova.js',
-        'src/lib/jquery/dist/jquery.js',
-        'src/js/**/*.js'],
+          'src/lib/ng-cordova/dist/ng-cordova.js',
+          'src/lib/jquery/dist/jquery.js',
+          'src/js/**/*.js'
+        ],
         dest: 'www/js/moonSongsIonic.js',
       },
       // Concat all css files

@@ -44,7 +44,7 @@ angular.module('moonSongsIonic.listSongsController', [])
     $rootScope.data.showReorder = false;
   };
 
-  $ionicModal.fromTemplateUrl('my-modal2.html', {
+  $ionicModal.fromTemplateUrl('modals/play-lists-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
