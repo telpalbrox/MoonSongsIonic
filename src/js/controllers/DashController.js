@@ -32,7 +32,7 @@ angular.module('moonSongsIonic.dashController', [])
     };
 
     $scope.test = function() {
-      ServerIp.set('http://192.168.1.130:8080');
+      ServerIp.set('http://192.168.1.134:8080');
     };
 
     $scope.scan = function() {
@@ -159,7 +159,7 @@ angular.module('moonSongsIonic.dashController', [])
     };
 
     $scope.login = function() {
-      $http.post(ServerIp.get() + '/public/authenticate', {
+      $http.post(ServerIp.get() + '/api/authenticate', {
           'userName': $scope.data.userName,
           'password': $scope.data.pass
         })

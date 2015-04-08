@@ -6,7 +6,7 @@ angular.module('moonSongsIonic.albumsSongsController', [])
         console.log('cargando canciones offline');
         $rootScope.albums = canciones;
       } else {
-        $http.get(ServerIp.get() + '/private/albums')
+        $http.get(ServerIp.get() + '/api/albums')
           .success(function(data) {
             $rootScope.albums = data;
           });

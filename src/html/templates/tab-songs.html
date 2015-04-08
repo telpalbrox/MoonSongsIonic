@@ -3,7 +3,7 @@
     <ion-list>
       <ion-item class="item item-thumbnail-left" ng-repeat="song in songs" type="item-text-wrap" href="#/tab/song/">
         <div class="item item-image">
-          <img ng-src="{{serverIp()}}/private/music/{{song.artist}}/{{song.album}}/Cover.jpg" />
+          <img ng-src="{{serverIp()}}/music/{{song.artist}}/{{song.album}}/Cover.jpg" />
         </div>
         <h2>{{song.title}}</h2>
         <p>{{song.album}}</p>

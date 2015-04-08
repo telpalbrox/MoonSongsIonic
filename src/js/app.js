@@ -99,12 +99,12 @@ angular.module('MoonSongsIonic', ['ionic',
 
     $rootScope.getAlbumURL = function(song) {
       if (song.imageUrl) return song.imageUrl;
-      else return ServerIp.get() + '/private/music/' + song.artist + '/' + song.album + '/Cover.jpg?dim=128x128';
+      else return ServerIp.get() + '/music/' + song.artist + '/' + song.album + '/Cover.jpg?dim=128x128';
     };
 
     $rootScope.getArtistURL = function(song) {
       if (song.artistUrl) return song.artistUrl;
-      else return ServerIp.get() + '/private/music/' + song.artist + '/Artist.jpg?dim=128x64';
+      else return ServerIp.get() + '/music/' + song.artist + '/Artist.jpg?dim=128x64';
     };
   });
 })

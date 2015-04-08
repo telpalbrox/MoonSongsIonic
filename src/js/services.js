@@ -6,7 +6,7 @@ angular.module('starter.services', [])
 .factory('ServerIp', function() {
     return {
       get: function() {
-        return window.localStorage.getItem('serverIp') || "http://localhost:8080";
+        return window.localStorage.getItem('serverIp') || "http://" + location.host;
       },
       set: function(ip) {
         window.localStorage.setItem('serverIp', ip);
@@ -94,7 +94,9 @@ angular.module('starter.services', [])
         if (self.offline) {
           return self.getSong().url;
         } else {
-          return ServerIp.get() + '/private/' + self.getSong().path;
+          var url = ServerIp.get() + '/api/songs/listen/' + self.getSong().artist + '/' + self.getSong().album + '/' + self.getSong().title;
+          console.log(url);
+          return url;
         }
       };
 
