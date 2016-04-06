@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Iniciar sesion</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">
+      <strong>Cancel</strong>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Usuario</span>
+        <input type="text" ng-model="data.userName">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Contrasenia</span>
+        <input type="password" ng-model="data.pass">
+      </label>
+      <button class="button button-block button-positive" on-tap="login()">
+        Enviar
+      </button>
+    </div>
+  </ion-content>
+</ion-modal-view>

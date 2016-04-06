@@ -1,42 +1,19 @@
-<script id="my-modal2.html" type="text/ng-template">
-  <div class="modal">
-    <ion-header-bar class="bar bar-header bar-positive">
-      <h1 class="title">Mis listas de reproduccion</h1>
-      <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
-    </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item ng-repeat="list in lists" on-tap="listSelected($index)">
-          {{list.title}} | {{list.list.length}} canciones
-          <ion-option-button class="button-assertive"
-                       on-tap="listDelete(list)">
-              Eliminar
-          </ion-option-button>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </div>
-</script>
 <ion-view title="Lista de canciones">
   <ion-content has-header="true" padding="true">
     <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
-      <ion-list show-delete="false" show-reorder="data.showReorder">
+    <ion-list show-delete="false" show-reorder="data.showReorder">
 
-        <ion-item ng-repeat="item in getSongList()"
-                  item="item" href="#/tab/song/" on-tap="clickSong(item)">
-          <i class="icon ion-headphone" ng-show="equalsSong(item)"></i>
-          {{ item.title }}
-          <ion-option-button class="button-assertive"
-                             on-tap="onItemDelete(item)">
-            Eliminar
-          </ion-option-button>
-          <ion-option-button class="button-calm"
-                             on-tap="share(item)">
-            Share
-          </ion-option-button>
-          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
-        </ion-item>
-      </ion-list>
-      {{JSON.stringify(Music)}}
+      <ion-item ng-repeat="item in getSongList()" item="item" href="#/tab/song/" on-tap="clickSong(item)">
+        <i class="icon ion-headphone" ng-show="equalsSong(item)"></i> {{ item.title }}
+        <ion-option-button class="button-assertive" on-tap="onItemDelete(item)">
+          Eliminar
+        </ion-option-button>
+        <ion-option-button class="button-calm" on-tap="share(item)">
+          Share
+        </ion-option-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+    {{JSON.stringify(Music)}}
   </ion-content>
 </ion-view>

@@ -2,23 +2,22 @@
   <ion-content class="padding" has-bouncing="false">
     <div class="list">
       <a class="item item-thumbnail-left">
-      <img ng-src="{{imageUrl}}"/>
-      <h2>{{title}}</h2>
-      <p>{{album}}</p>
+        <img ng-src="{{imageUrl}}" />
+        <h2>{{title}}</h2>
+        <p>{{album}}</p>
       </a>
       <div class="range">
         {{data.time | toMinutes}}
-        <input type="range" name="time" ng-model="data.time" min="0"
-        max="{{duration}}" id="rangeTime">
-        {{duration | toMinutes}}
+        <input type="range" name="time" ng-model="data.time" min="0" max="{{duration}}" id="rangeTime"> {{duration | toMinutes}}
       </div>
-      Lista de reproduccion: {{getSongIndex()}}/{{getMusicLength()}}<br/>
+      Lista de reproduccion: {{getSongIndex()}}/{{getMusicLength()}}
+      <br/>
       <div align="center">
-      <button class="button button-stable icon ion-skip-backward" on-tap="prevSong()"/>
-      <button class="button button-stable icon ion-play" on-tap="play()"/>
-      <button class="button button-stable icon ion-pause" on-tap="pause()"/>
-      <button class="button button-stable icon ion-skip-forward" on-tap="nextSong()"/>
-      <div>
-    </div>
+        <button class="button button-stable icon ion-skip-backward" on-tap="prevSong()" />
+        <button class="button button-stable icon ion-play" on-tap="play()" />
+        <button class="button button-stable icon ion-pause" on-tap="pause()" />
+        <button class="button button-stable icon ion-skip-forward" on-tap="nextSong()" />
+        <div>
+        </div>
   </ion-content>
 </ion-view>

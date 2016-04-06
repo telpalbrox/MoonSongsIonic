@@ -15,9 +15,10 @@ module.exports = function(grunt) {
       // Concat all js files
       js: {
         src: ['src/lib/ionic/js/ionic.bundle.js',
-        'src/lib/ng-cordova/dist/ng-cordova.js',
-        'src/lib/jquery/dist/jquery.js',
-        'src/js/**/*.js'],
+          'src/lib/ng-cordova/dist/ng-cordova.js',
+          'src/lib/jquery/dist/jquery.js',
+          'src/js/**/*.js'
+        ],
         dest: 'www/js/moonSongsIonic.js',
       },
       // Concat all css files
@@ -98,7 +99,7 @@ module.exports = function(grunt) {
     watch: {
       options: {
         spawn: false,
-        livereload: 1336
+        livereload: 1335
       },
       // Watch any js/css change and re-concat it
       js: {
@@ -166,6 +167,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build-dev', ['jshint', 'concat', 'sync']);
   // Build project and start ionic serve
   grunt.registerTask('dev', ['jshint', 'concat', 'cssmin', 'sync', 'concurrent:dev']);
-  // Build project and clena dev files
+  // Build project and clean dev files
   grunt.registerTask('release', ['install', 'clean:release']);
 };

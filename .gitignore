@@ -51,3 +51,6 @@ src/lib/
 
 # compiled js/css/html
 www/
+
+# webStorm folder
+.idea/
