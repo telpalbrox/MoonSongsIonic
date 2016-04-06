@@ -1,6 +1,12 @@
-angular.module('moonSongsIonic.albumDetailSongsController', [])
-  .controller('AlbumDetailController', function($scope, $rootScope, $http, $ionicListDelegate, ServerIp, Music) {
-    var arrSongs = [];
+(function() {
+  angular.module('MoonSongsIonic')
+    .controller('AlbumDetailController', AlbumDetail);
+
+  AlbumDetail.$inject = ['$scope', '$rootScope', 'Music'];
+
+  function AlbumDetail($scope, $rootScope, Music) {
+    var vm = this;
+    vm.arrSongs = [];
     $scope.randomize = function() {
       for (var i in $rootScope.album.songs) {
         arrSongs.push($rootScope.album.songs[i]);
@@ -16,4 +22,5 @@ angular.module('moonSongsIonic.albumDetailSongsController', [])
     $scope.songClick = function(song) {
       $rootScope.song = song;
     };
-  });
+  }
+})();

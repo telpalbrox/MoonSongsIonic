@@ -29,14 +29,13 @@ angular.module('moonSongsIonic.songDetailController', [])
         console.log('directorio: ');
         console.log(JSON.stringify(dir));
         console.log('Obtenido directorio: ' + dir.nativeURL);
-        fileTransfer.download(encodeURI(ServerIp.get() + '/api/music/' + artist + '/Artist.jpg'),
+        fileTransfer.download(encodeURI(ServerIp.get() + '/api/music/' + artist + '/image'),
           dir.nativeURL + '/' + artist + '/Artist.jpg',
           function() {
             console.log('Download artist image complete');
           }, onError);
 
-        fileTransfer.download(encodeURI(ServerIp.get() + '/api/music/' + artist + '/' +
-            album + '/' + title + '.mp3'),
+        fileTransfer.download(encodeURI(ServerIp.get() + '/api/songs/' + artist + '/' + album + '/' + title + '/listen'),
           dir.nativeURL + '/' + artist + '/' + album + '/' + title + '.mp3',
           function() {
             console.log('Download Music complete');
@@ -47,7 +46,7 @@ angular.module('moonSongsIonic.songDetailController', [])
 
         };
 
-        fileTransfer.download(encodeURI(ServerIp.get() + '/api/music/' + artist + '/' + album + '/Cover.jpg'),
+        fileTransfer.download(encodeURI(ServerIp.get() + '/api/music/' + artist + '/' + album + '/image'),
           dir.nativeURL + '/' + artist + '/' + album + '/Cover.jpg',
           function() {
             console.log('Download album image complete');

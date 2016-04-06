@@ -13,7 +13,6 @@ var fileSystemLocal;
 angular.module('MoonSongsIonic', ['ionic',
   'ng-cordova',
   'starter.services',
-  'moonSongsIonic.albumDetailSongsController',
   'moonSongsIonic.albumsSongsController',
   'moonSongsIonic.dashController',
   'moonSongsIonic.listSongsController',
@@ -201,7 +200,7 @@ angular.module('MoonSongsIonic', ['ionic',
       views: {
         'tab-albums': {
           templateUrl: 'templates/album-detail.html',
-          controller: 'AlbumDetailController'
+          controller: 'AlbumDetailController as vm'
         }
       }
     });

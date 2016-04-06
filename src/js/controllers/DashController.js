@@ -32,7 +32,7 @@ angular.module('moonSongsIonic.dashController', [])
     };
 
     $scope.test = function() {
-      ServerIp.set('http://192.168.1.167:8080');
+      ServerIp.set('http://moonsongs.albertovps.duckdns.org');
     };
 
     $scope.scan = function() {
